@@ -1,0 +1,192 @@
+html, body, h1, form, fieldset, legend, ol, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    padding: 20px;
+    padding-top:70px;
+}
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+form#payment {
+    border-radius: 5px;
+    counter-reset: fieldsets;
+    padding: 20px;
+}
+form#payment fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+form#payment fieldset:last-of-type {
+    margin-bottom: 0;
+}
+form#payment legend {
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px #c0d576;
+    border:none;
+}
+form#payment > fieldset > legend:before {
+    content: "Step " counter(fieldsets) ": ";
+    counter-increment: fieldsets;
+}
+form#payment fieldset fieldset legend {
+    color: #111111;
+    font-size: 13px;
+    font-weight: normal;
+    padding-bottom: 0;
+}
+form#payment ol li {
+    background: #b9cf6a;
+    background: rgba(255,255,255,.3);
+    border-color: #e3ebc3;
+    border-color: rgba(255,255,255,.6);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    line-height: 30px;
+    list-style: none;
+    padding: 5px 30px;
+    margin-bottom: 2px;
+}
+form#payment ol ol li {
+    background: none;
+    border: none;
+    float: left;
+}
+form#payment label {
+    float: left;
+    font-size: 13px;
+    width: 210px;
+}
+form#payment fieldset fieldset label {
+    background:none no-repeat left 50%;
+    line-height: 20px;
+    padding: 0 0 0 30px;
+    width: auto;
+}
+form#payment fieldset fieldset label:hover {
+    cursor: pointer;
+}
+form#payment input:not([type=radio]),
+form#payment textarea {
+    background: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+}
+form#payment input:not([type=submit]):focus,
+form#payment textarea:focus {
+    background: #ffffdc;
+}
+form#payment input[type=radio] {
+    float: left;
+    margin-right: 5px;
+}
+form#payment button {
+    background: #008000;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+    outline: none;
+}
+form#payment button:hover {
+    background: #1e2506;
+    cursor: pointer;
+}
+body{
+    background: #449d44;
+}
+form#payment{
+    margin: 0 auto;
+}
+.same-address input{
+    width:20px !important;
+}
+.top-margin-for-nav{
+    padding-top: 32px;
+}
+form#payment .row input.card{
+    width:95%;
+    margin-left: 1%;
+}
+.form-group label{
+    padding-left: 0;
+}
+h2.validation{
+    text-align: center;
+}
+input.invalid {
+    border: 2px solid red;
+
+}
+.validation.failed:after {
+    color: #000000;
+    content: 'I am Sorry but you seem to have provided Invalid Card Details';
+}
+
+.validation.passed:after {
+    color: green;
+    content: 'Validation passed, Redirecting Now...';
+}
+.thankyou-dialog{
+    color:#000;
+    margin: 0 auto;
+    background: #fff;
+    top:100px;
+    border-radius: 10px;
+    padding: 50px;
+    line-height: 28px;
+
+}
+.link-to-form {
+    background: #008000;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 7px 25px;
+    text-shadow: 0 1px 5px #000;
+    text-transform: uppercase;
+    outline: none;
+    margin-top: 20px;
+    text-align: center;
+    width:235px;
+}
+.link-to-form:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+
+}
+::-webkit-input-placeholder {
+    color: #c0c0c0 !important;
+}
+:-moz-placeholder { /* Firefox 18 and below */
+    color: #c0c0c0 !important;
+}
+::-moz-placeholder {  /* Firefox 19 and Up */
+    color: #c0c0c0 !important;
+}
+:-ms-input-placeholder {
+    color: #c0c0c0 !important;
+}

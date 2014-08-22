@@ -1,0 +1,26 @@
+extends layout
+block content
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        a.navbar-brand(href='/') REST API
+        .navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li
+                    a(href='/') CREATE
+                li.active
+                    a(href='/users/') READ
+                li
+                    a(href='/users/') UPDATE
+                li
+                    a(href='/users/') DELETE
+    h1 All Users
+    div.list-group
+        each user in users
+            div.list-group-item
+                p #{user.name} (#{user.email})
+                a.btn.btn-default.btn-info(href="/users/#{user.name}") Edit/Update

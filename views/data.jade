@@ -1,0 +1,5 @@
+h1  All Users
+
+ul
+    each user in users
+        li: a(href="/users/#{user.name}") #{user.name} (#{user.email})

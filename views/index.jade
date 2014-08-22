@@ -1,0 +1,42 @@
+extends layout
+block content
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        a.navbar-brand(href='/') REST API
+        .navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li.active
+                    a(href='/') CREATE
+                li
+                    a(href='/users/') READ
+                li
+                    a(href='/users/') UPDATE
+                li
+                    a(href='/users/') DELETE
+
+    .container.top-margin-for-nav(role='main')
+    .row
+        form#payment.form-horizontal(autocomplete='on', method='POST', action='/users')
+            fieldset
+                legend Create Operation
+                ol
+                    li
+                        .form-group
+                            label.col-sm-6(for='name') Name
+                            input#name.form-control.col-sm-6.needs-validation(name='name', type='text', placeholder='First and Last Name', required='required', autofocus='autofocus')
+                    li
+                        .form-group
+                            label.col-sm-6(for='email') Email
+                            input#email.form-control.col-sm-6.needs-validation(name='email', type='email', placeholder='example@gmail.com', required='required')
+                    li
+                        .form-group
+                            label.col-sm-6(for='phone') Phone
+                            input#phone.form-control.col-sm-6.col-xs-3.needs-validation(name='phone', type='phone', placeholder='Eg. +9876564879', required='required')
+
+            fieldset
+                button(type='submit', id='s') CREATE
