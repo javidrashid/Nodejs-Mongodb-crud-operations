@@ -10,6 +10,7 @@ var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
 
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app = express();
 
 // all environments
@@ -28,7 +29,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-mongoose.connect("mongodb://localhost/storedata");
+if(env === 'development') {
+  var db_url = "mongodb://localhost/storedata";
+    mongoose.connect(db_url);
+}
+else {
+  var db_url = "mongodb://printvoid:nodecrud@ds063869.mongolab.com:63869/nodecrud";
+  mongoose.connect(db_url);
+}
+
+mongoose.connect(db_url);
 var UserSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -81,7 +91,7 @@ app.put('/users/:name', function(req, res) {
     var b = req.body;
         Users.update(
         { name: req.params.name },
-        {name: b.name, age: b.age, phone: b.phone},
+        {name: b.name, email: b.email, phone: b.phone},
             function(err) {
                 res.redirect('/users/' + b.name);
             }
